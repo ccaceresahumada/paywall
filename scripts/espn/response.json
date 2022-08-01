@@ -11,27 +11,37 @@
       "title": "Serving Fans. Anytime. Anywhere.",
       "textColor": "#F8F8FFFF",
       "weight": "bold",
-      "alignment": "center"
+      "alignment": "center",
+      "titleAlignment": "center",
+      "widthPercentage": 1,
+      "casing": "none"
     },
     {
       "type": "label",
       "title": "All the Sports. All the Time. Thousands of events, exclusive original series, and more -- all in HD.",
       "textColor": "#F8F8FFFF",
       "weight": "bold",
-      "alignment": "center"
+      "alignment": "center",
+      "titleAlignment": "center",
+      "widthPercentage": 1,
+      "casing": "none"
     },
     {
       "type": "label",
       "title": "Already Hve an ESPN+ Accout?.",
       "textColor": "#F8F8FFFF",
       "weight": "bold",
-      "alignment": "center"
+      "alignment": "center",
+      "titleAlignment": "center",
+      "widthPercentage": 1,
+      "casing": "none"
     },
     {
       "type": "button",
       "title": "Log In",
       "titleAlignment": "center",
-      "case": "camel",
+      "alignment": "center",
+      "casing": "camel",
       "widthPercentage": 1,
       "height": 50,
       "backgroundColor": "#1A1D28FF",
@@ -42,7 +52,8 @@
       "type": "button",
       "title": "Start Your Free Trial",
       "titleAlignment": "center",
-      "case": "camel",
+      "alignment": "center",
+      "casing": "camel",
       "widthPercentage": 1,
       "height": 50,
       "backgroundColor": "#1A1D28FF",
@@ -53,7 +64,11 @@
       "type": "label",
       "title": "7-day free trial, then $5.99/month",
       "textColor": "#F8F8FFFF",
-      "alignment": "center"
+      "weight": "regular",
+      "alignment": "center",
+      "titleAlignment": "center",
+      "widthPercentage": 1,
+      "casing": "none"
     }
   ]
 }

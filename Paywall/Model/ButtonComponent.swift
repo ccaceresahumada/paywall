@@ -22,7 +22,7 @@ class ButtonComponent: Component {
     private enum CodingKeys: String, CodingKey {
         case title
         case titleAlignment
-        case casing = "case"
+        case casing
         case height
         case backgroundColor
         case textColor

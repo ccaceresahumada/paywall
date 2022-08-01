@@ -15,17 +15,58 @@ enum PaywallType: String {
 
 enum NetworkError: Error {
     case invalidURL
+    case failedStatusCode
+    case invalidData
 }
+
+typealias PaywallResponse = (PaywallLayout?, Error?) -> Void
 
 class Network {
     
-    func fetchPaywall(_ type: PaywallType = .disney, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void ) {
+    // MARK: - Singleton instance
+    
+    static let shared: Network = Network()
+    
+    // MARK: - Private initializer
+    
+    private init() {}
+    
+    // MARK: - Public API
+    
+    func fetchPaywall(_ type: PaywallType = .disney, completionHandler: @escaping PaywallResponse) {
         guard let url = URL(string: "http://localhost:8000/response.json") else {
-            completionHandler(nil, nil, NetworkError.invalidURL)
+            completionHandler(nil, NetworkError.invalidURL)
             return
         }
+
         let urlRequest = URLRequest(url: url)
-        let dataTask = URLSession.paywall.dataTask(with: urlRequest, completionHandler: completionHandler)
+        
+        let dataTask = URLSession.paywall.dataTask(with: urlRequest) { data, urlResponse, error in
+            guard let data = data else {
+                completionHandler(nil, NetworkError.invalidData)
+                return
+            }
+            
+            guard error == nil else {
+                completionHandler(nil, error)
+                return
+            }
+            
+            guard
+                let response = urlResponse as? HTTPURLResponse,
+                200 ..< 300 ~= response.statusCode else {
+                completionHandler(nil, NetworkError.failedStatusCode)
+                return
+            }
+            
+            do {
+                let paywall = try JSONDecoder().decode(PaywallLayout.self, from: data)
+                completionHandler(paywall, nil)
+            } catch {
+                print("Failed to parse data. Error = \(error)")
+            }
+        }
+                                                   
         dataTask.resume()
     }
 }

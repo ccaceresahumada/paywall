@@ -14,12 +14,12 @@ class LabelComponent: Component {
     var textColor: String = ""
     var weight: ComponentWeight = .regular
     var titleAlignment: ComponentAlignment = .center
-    var casing: ComponentCase = .upper
+    var casing: ComponentCase = .none
 
     private enum CodingKeys: String, CodingKey {
         case title
         case titleAlignment
-        case casing = "case"
+        case casing
         case weight
         case textColor
     }

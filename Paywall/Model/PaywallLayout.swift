@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PaywallLayot: Codable {
+class PaywallLayout: Codable {
     let metadata: Metadata
     let components: [Component]
     
@@ -20,7 +20,20 @@ class PaywallLayot: Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         metadata = try container.decode(Metadata.self, forKey: CodingKeys.metatada)
-        components = try container.decode([Component].self, forKey: CodingKeys.components)
+        //components = try container.decode([Component].self, forKey: CodingKeys.components)
+        
+        var componentsContainer = try container.nestedUnkeyedContainer(forKey: .components)
+        var components = [Component]()
+        var tmpContainer = componentsContainer
+
+        while !componentsContainer.isAtEnd {
+            let typeContainer = try componentsContainer.nestedContainer(keyedBy: Discriminator.self)
+            let family: UIElementFamily = try typeContainer.decode(UIElementFamily.self, forKey: UIElementFamily.discriminator)
+            if let type = family.getType() as? Component.Type {
+                components.append(try tmpContainer.decode(type))
+            }
+        }
+        self.components = components
     }
     
     func encode(to encoder: Encoder) throws {
