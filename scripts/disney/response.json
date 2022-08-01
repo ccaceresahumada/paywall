@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "backgroundImage": "http://localhost:8000/images/splash.png",
+    "backgroundColor": "#1A1D28FF"
+  },
+  "components": [
+    {
+      "type": "label",
+      "title": "The best stories in all the world, all in one place.",
+      "color": "#F8F8FFFF",
+      "weight": "bold",
+      "alignment": "center"
+    }
+  ]
+}
