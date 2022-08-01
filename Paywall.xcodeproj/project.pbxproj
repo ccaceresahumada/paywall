@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		307430712719D4AA001FA496 /* UIColorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307430702719D4AA001FA496 /* UIColorHelpers.swift */; };
+		379DBE4C28985857003B2874 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE4B28985857003B2874 /* Network.swift */; };
+		379DBE4F28985A30003B2874 /* PaywallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE4E28985A30003B2874 /* PaywallLayout.swift */; };
+		379DBE5128985A80003B2874 /* ImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE5028985A80003B2874 /* ImageComponent.swift */; };
+		379DBE5328985BB5003B2874 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE5228985BB5003B2874 /* Metadata.swift */; };
+		379DBE552898777F003B2874 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE542898777F003B2874 /* Component.swift */; };
+		379DBE5728987A23003B2874 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE5628987A23003B2874 /* ButtonComponent.swift */; };
+		379DBE5928987C10003B2874 /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE5828987C10003B2874 /* LabelComponent.swift */; };
+		379DBE5B28987D41003B2874 /* SeparatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE5A28987D41003B2874 /* SeparatorComponent.swift */; };
 		C3E0C60B25239C310034987E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C60A25239C310034987E /* AppDelegate.swift */; };
 		C3E0C60D25239C310034987E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C60C25239C310034987E /* SceneDelegate.swift */; };
 		C3E0C60F25239C310034987E /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C60E25239C310034987E /* PaywallView.swift */; };
@@ -35,6 +43,14 @@
 
 /* Begin PBXFileReference section */
 		307430702719D4AA001FA496 /* UIColorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHelpers.swift; sourceTree = "<group>"; };
+		379DBE4B28985857003B2874 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		379DBE4E28985A30003B2874 /* PaywallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallLayout.swift; sourceTree = "<group>"; };
+		379DBE5028985A80003B2874 /* ImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComponent.swift; sourceTree = "<group>"; };
+		379DBE5228985BB5003B2874 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		379DBE542898777F003B2874 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		379DBE5628987A23003B2874 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		379DBE5828987C10003B2874 /* LabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponent.swift; sourceTree = "<group>"; };
+		379DBE5A28987D41003B2874 /* SeparatorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorComponent.swift; sourceTree = "<group>"; };
 		C3E0C60725239C310034987E /* Paywall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paywall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E0C60A25239C310034987E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3E0C60C25239C310034987E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +88,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		379DBE4A28985817003B2874 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C3E0C6392523A1A00034987E /* NetworkingHelpers.swift */,
+				379DBE4B28985857003B2874 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		379DBE4D28985A09003B2874 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				379DBE4E28985A30003B2874 /* PaywallLayout.swift */,
+				379DBE5028985A80003B2874 /* ImageComponent.swift */,
+				379DBE5228985BB5003B2874 /* Metadata.swift */,
+				379DBE542898777F003B2874 /* Component.swift */,
+				379DBE5628987A23003B2874 /* ButtonComponent.swift */,
+				379DBE5828987C10003B2874 /* LabelComponent.swift */,
+				379DBE5A28987D41003B2874 /* SeparatorComponent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C3E0C5FE25239C310034987E = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +135,7 @@
 		C3E0C60925239C310034987E /* Paywall */ = {
 			isa = PBXGroup;
 			children = (
+				379DBE4D28985A09003B2874 /* Model */,
 				C3E0C62E25239D370034987E /* App */,
 				C3E0C62D25239D300034987E /* SwiftUI */,
 				C3E0C62C25239D270034987E /* UIKit */,
@@ -141,12 +181,12 @@
 		C3E0C62E25239D370034987E /* App */ = {
 			isa = PBXGroup;
 			children = (
+				379DBE4A28985817003B2874 /* Network */,
 				C3E0C61025239C330034987E /* Assets.xcassets */,
 				C3E0C61525239C330034987E /* LaunchScreen.storyboard */,
 				C3E0C61825239C330034987E /* Info.plist */,
 				C3E0C60A25239C310034987E /* AppDelegate.swift */,
 				C3E0C60C25239C310034987E /* SceneDelegate.swift */,
-				C3E0C6392523A1A00034987E /* NetworkingHelpers.swift */,
 				307430702719D4AA001FA496 /* UIColorHelpers.swift */,
 			);
 			path = App;
@@ -257,12 +297,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3E0C60B25239C310034987E /* AppDelegate.swift in Sources */,
+				379DBE5728987A23003B2874 /* ButtonComponent.swift in Sources */,
+				379DBE552898777F003B2874 /* Component.swift in Sources */,
 				C3E0C63225239F7A0034987E /* SwiftUIShakeHandling.swift in Sources */,
+				379DBE4C28985857003B2874 /* Network.swift in Sources */,
 				C3E0C60D25239C310034987E /* SceneDelegate.swift in Sources */,
 				C3E0C60F25239C310034987E /* PaywallView.swift in Sources */,
+				379DBE5128985A80003B2874 /* ImageComponent.swift in Sources */,
+				379DBE5928987C10003B2874 /* LabelComponent.swift in Sources */,
+				379DBE5B28987D41003B2874 /* SeparatorComponent.swift in Sources */,
 				307430712719D4AA001FA496 /* UIColorHelpers.swift in Sources */,
+				379DBE5328985BB5003B2874 /* Metadata.swift in Sources */,
 				C3E0C63025239D4B0034987E /* PaywallViewController.swift in Sources */,
 				C3E0C63A2523A1A10034987E /* NetworkingHelpers.swift in Sources */,
+				379DBE4F28985A30003B2874 /* PaywallLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
