@@ -4,14 +4,6 @@ Welcome to the Disney Streaming take-home interview!
 
 Check out the [prompt](PROMPT.md) to get started.
 
-## README Questions:
-
-The following are some sample questions for you to get started on your README, but feel free to format it in any way you see fit.
-
-1. Describe any important assumptions that you have made in your code.
-1. What edge cases have you considered in your code? What edge cases have you yet to handle?
-1. What are some things you would like to do if you had more time? Is there anything you would have to change about the design of your current code to do these things? Give a rough outline of how you might implement these ideas.
-
 ## Assumptions
 
 1. I decided to use the given base project and json format to keep things easier.
@@ -19,6 +11,13 @@ The following are some sample questions for you to get started on your README, b
 3. I noticed the UI elements were not equally spaced in the vertical axis, so I thought using a stack would be more complex than using auto layout.
 4. I am assuming the order of the components array in the json response will mandate the order in which the components should be laid out.
 5. I added the provided images into an xcassets catalog for displaying them easily. In real life I would have to make another request to actually retrive the images, which means a placeholder image would be required while all the assets load, or maybe not even that and just a loading spinner would suffice. This would probably be a decision that should be made in conjunction with UX, Product and Backend to understand latency and reasonable loading times.
+
+## Edge cases
+
+The flow of the app is severely limited by the need to restart the server.
+If the server is not running, the app shows an empty screen.
+If the response json is ill formatted the app shows an empty screen.
+If the response json is empty, the app crashes when trying to decode the data. See the Enhacements section at the bottom
 
 ## Architecture
 
@@ -98,3 +97,7 @@ Right now the endpoint used to retrieve the data is hardcoded into the PaywallSe
 ### Robust service (REST)
 
 Right now the provided server needs to be restarted in order to provide parameterized assets. I would instead use a service that takes a parameter `type` to decide which assets to return.
+
+### Robust Client
+
+Modify the Codable classes to support empty data. Right now the code is expecting the json format to fully comply with the requirements, but it crashes if it doesn't.
