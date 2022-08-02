@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 
+protocol CustomPaywallViewDelegate: AnyObject {
+    func displayAlert(withMessage message: String)
+}
+
 class CustomPaywallView: UIView {
     
     // MARK: - Internal properties
     
+    weak var delegate: CustomPaywallViewDelegate?
     var viewModel: PaywallViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
@@ -108,11 +113,9 @@ class CustomPaywallView: UIView {
             let action = ActionCode(rawValue: code) {
             switch action {
             case .loginButtonTapped:
-                print("Log In")
-            case .disneyStartFreeTrialButtonTapped:
-                print("Purchase \(action.rawValue)")
-            case .espnSignUpNowButtonTapped:
-                print("Purchase \(action.rawValue)")
+                delegate?.displayAlert(withMessage: "Log In")
+            default:
+                delegate?.displayAlert(withMessage: "Purchase \(action.rawValue)")
             }
         }
     }

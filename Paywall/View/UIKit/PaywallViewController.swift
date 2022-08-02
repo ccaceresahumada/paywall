@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PaywallViewController: UIViewController, PaywallViewModelDelegate {
+class PaywallViewController: UIViewController, PaywallViewModelDelegate, CustomPaywallViewDelegate {
     
     // MARK: - UI Components
     
@@ -35,6 +35,8 @@ class PaywallViewController: UIViewController, PaywallViewModelDelegate {
 
         viewModel = PaywallViewModel(type: .disney, delegate: self)
         viewModel?.reloadData()
+        
+        customPaywall.delegate = self
         
         layout()
     }
@@ -86,6 +88,14 @@ class PaywallViewController: UIViewController, PaywallViewModelDelegate {
     
     func paywallFailedToUpdate(_ error: Error?) {
         print("Failed to upload paywall data. \(error?.localizedDescription ?? "")")
+    }
+    
+    // MARK: - Alert
+    
+    func displayAlert(withMessage message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
