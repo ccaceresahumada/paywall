@@ -47,7 +47,6 @@ struct ComponentBuilder: ComponentBuilderFactory {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: viewModel.getImageName(index: index))
         imageView.contentMode = .scaleAspectFit
-        imageView.heightAnchor.constraint(equalToConstant: viewModel.getImageHeight(index: index)).isActive = true
         return imageView
     }
     

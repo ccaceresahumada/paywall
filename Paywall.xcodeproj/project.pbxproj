@@ -19,7 +19,6 @@
 		379DBE5F28989302003B2874 /* PaywallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE5E28989302003B2874 /* PaywallViewModel.swift */; };
 		379DBE6128989E00003B2874 /* CustomPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE6028989E00003B2874 /* CustomPaywallView.swift */; };
 		379DBE642898A35D003B2874 /* ComponentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE632898A35D003B2874 /* ComponentBuilder.swift */; };
-		379DBE692898CC8F003B2874 /* ConstraintValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE682898CC8F003B2874 /* ConstraintValue.swift */; };
 		C3E0C60B25239C310034987E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C60A25239C310034987E /* AppDelegate.swift */; };
 		C3E0C60D25239C310034987E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C60C25239C310034987E /* SceneDelegate.swift */; };
 		C3E0C60F25239C310034987E /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C60E25239C310034987E /* PaywallView.swift */; };
@@ -58,7 +57,6 @@
 		379DBE5E28989302003B2874 /* PaywallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewModel.swift; sourceTree = "<group>"; };
 		379DBE6028989E00003B2874 /* CustomPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPaywallView.swift; sourceTree = "<group>"; };
 		379DBE632898A35D003B2874 /* ComponentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentBuilder.swift; sourceTree = "<group>"; };
-		379DBE682898CC8F003B2874 /* ConstraintValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintValue.swift; sourceTree = "<group>"; };
 		C3E0C60725239C310034987E /* Paywall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paywall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E0C60A25239C310034987E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3E0C60C25239C310034987E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 				379DBE622898A348003B2874 /* ComponentBuilder */,
 				C3E0C62F25239D4B0034987E /* PaywallViewController.swift */,
 				379DBE6028989E00003B2874 /* CustomPaywallView.swift */,
-				379DBE682898CC8F003B2874 /* ConstraintValue.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -342,7 +339,6 @@
 				C3E0C60F25239C310034987E /* PaywallView.swift in Sources */,
 				379DBE5F28989302003B2874 /* PaywallViewModel.swift in Sources */,
 				379DBE5128985A80003B2874 /* ImageComponent.swift in Sources */,
-				379DBE692898CC8F003B2874 /* ConstraintValue.swift in Sources */,
 				379DBE5928987C10003B2874 /* LabelComponent.swift in Sources */,
 				379DBE5B28987D41003B2874 /* SeparatorComponent.swift in Sources */,
 				307430712719D4AA001FA496 /* UIColorHelpers.swift in Sources */,

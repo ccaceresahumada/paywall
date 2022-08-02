@@ -10,12 +10,10 @@
       "type": "image",
       "asset": "http://localhost:8000/images/logo.png",
       "alignment": "center",
-      "widthPercentage": 0.3,
-      "height": 100,
+      "widthPercentage": 0.6,
+      "height": 150,
       "constraints": {
-        "leading": 16,
-        "top": 0,
-        "trailing": 16,
+        "centerX": 0,
         "bottom": 10
       }
     },
@@ -47,7 +45,7 @@
         "leading": 16,
         "trailing": 16,
         "top": 10,
-        "bottom": 150
+        "bottom": 100
       }
     },
     {
@@ -60,22 +58,22 @@
       "widthPercentage": 1,
       "height": 55,
       "fontSize": 17,
-      "backgroundColor": "#00006AC7",
+      "backgroundColor": "#006AC7FF",
       "textColor": "#FFFFFFFF",
       "actionCode": "eplus_free_trial",
       "constraints": {
         "leading": 16,
         "trailing": 16,
-        "top": 150,
+        "top": 100,
         "bottom": 20
       }
     },
     {
       "type": "label",
       "title": "Start streaming Disney+ with yout 7 day free trial, then only 6.99/month.",
-      "textColor": "#00919396",
+      "textColor": "#919396FF",
       "weight": "regular",
-      "fontSize": 14,
+      "fontSize": 16,
       "titleAlignment": "center",
       "alignment": "center",
       "widthPercentage": 1,
@@ -91,7 +89,7 @@
     {
       "type": "separator",
       "color": "#F8F8FFFF",
-      "height": 2,
+      "height": 1,
       "alignment": "center",
       "widthPercentage": 1,
       "constraints": {
@@ -118,7 +116,7 @@
         "leading": 16,
         "trailing": 16,
         "top": 30,
-        "bottom": 40
+        "bottom": 0
       }
     }
   ]

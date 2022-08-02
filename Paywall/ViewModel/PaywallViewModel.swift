@@ -74,6 +74,11 @@ class PaywallViewModel {
         }
     }
     
+    func getComponentConstraints(index: Int) -> ComponentConstraint {
+        guard let data = paywall?.components[index] else { return ComponentConstraint() }
+        return data.constraints
+    }
+    
     // MARK: - Button
     
     func getButtonTitle(index: Int) -> String {

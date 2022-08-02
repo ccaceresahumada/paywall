@@ -65,34 +65,38 @@ enum UIElementFamily: String, ComponentFamily {
 }
 
 class ComponentConstraint: Codable {
-    var leading: CGFloat = 0
-    var trailing: CGFloat = 0
-    var top: CGFloat = 0
-    var bottom: CGFloat = 0
+    var leading: CGFloat?
+    var trailing: CGFloat?
+    var top: CGFloat?
+    var bottom: CGFloat?
+    var centerX: CGFloat?
     
     private enum CodingKeys: String, CodingKey {
         case leading
         case trailing
         case top
         case bottom
+        case centerX
     }
     
     init() {}
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        leading = try container.decode(CGFloat.self, forKey: .leading)
-        trailing = try container.decode(CGFloat.self, forKey: .trailing)
-        top = try container.decode(CGFloat.self, forKey: .top)
-        bottom = try container.decode(CGFloat.self, forKey: .bottom)
+        leading = try container.decodeIfPresent(CGFloat.self, forKey: .leading)
+        trailing = try container.decodeIfPresent(CGFloat.self, forKey: .trailing)
+        top = try container.decodeIfPresent(CGFloat.self, forKey: .top)
+        bottom = try container.decodeIfPresent(CGFloat.self, forKey: .bottom)
+        centerX = try container.decodeIfPresent(CGFloat.self, forKey: .centerX)
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(leading, forKey: .leading)
-        try container.encode(trailing, forKey: .trailing)
-        try container.encode(top, forKey: .top)
-        try container.encode(bottom, forKey: .bottom)
+        try container.encodeIfPresent(leading, forKey: .leading)
+        try container.encodeIfPresent(trailing, forKey: .trailing)
+        try container.encodeIfPresent(top, forKey: .top)
+        try container.encodeIfPresent(bottom, forKey: .bottom)
+        try container.encodeIfPresent(centerX, forKey: .centerX)
     }
 }
 
