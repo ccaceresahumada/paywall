@@ -11,30 +11,36 @@
       "title": "Serving Fans. Anytime. Anywhere.",
       "textColor": "#F8F8FFFF",
       "weight": "bold",
+      "fontSize": 30,
       "alignment": "center",
       "titleAlignment": "center",
       "widthPercentage": 1,
-      "casing": "none"
+      "casing": "none",
+      "lines": 1
     },
     {
       "type": "label",
       "title": "All the Sports. All the Time. Thousands of events, exclusive original series, and more -- all in HD.",
       "textColor": "#F8F8FFFF",
-      "weight": "bold",
+      "weight": "regular",
+      "fontSize": 20,
       "alignment": "center",
       "titleAlignment": "center",
       "widthPercentage": 1,
-      "casing": "none"
+      "casing": "none",
+      "lines": 3
     },
     {
       "type": "label",
       "title": "Already Hve an ESPN+ Accout?.",
       "textColor": "#F8F8FFFF",
-      "weight": "bold",
+      "weight": "regular",
+      "fontSize": 20,
       "alignment": "center",
       "titleAlignment": "center",
       "widthPercentage": 1,
-      "casing": "none"
+      "casing": "none",
+      "lines": 1
     },
     {
       "type": "button",
@@ -44,9 +50,11 @@
       "casing": "camel",
       "widthPercentage": 1,
       "height": 50,
-      "backgroundColor": "#1A1D28FF",
+      "weight": "bold",
+      "fontSize": 20,
+      "backgroundColor": "#FFF2A72D",
       "textColor": "#F8F8FFFF",
-      "actionCode": "login_button_tapped"
+      "actionCode": "loginButtonTapped"
     },
     {
       "type": "button",
@@ -56,19 +64,23 @@
       "casing": "camel",
       "widthPercentage": 1,
       "height": 50,
-      "backgroundColor": "#1A1D28FF",
+      "weight": "bold",
+      "fontSize": 20,
+      "backgroundColor": "#FFF2A72D",
       "textColor": "#F8F8FFFF",
-      "actionCode": "start_free_trial_button_tapped"
+      "actionCode": "dplus_free_trial"
     },
     {
       "type": "label",
       "title": "7-day free trial, then $5.99/month",
       "textColor": "#F8F8FFFF",
       "weight": "regular",
+      "fontSize": 20,
       "alignment": "center",
       "titleAlignment": "center",
       "widthPercentage": 1,
-      "casing": "none"
+      "casing": "none",
+      "lines": 1
     }
   ]
 }

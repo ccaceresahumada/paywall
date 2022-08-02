@@ -58,10 +58,10 @@ class PaywallViewController: UIViewController, PaywallViewModelDelegate {
     
     private func layoutCustomPaywallView() {
         view.addSubview(customPaywall)
-        customPaywall.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+        customPaywall.topAnchor.constraint(equalTo: view.topAnchor, constant: ConstraintValue.topXL).isActive = true
         customPaywall.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         customPaywall.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        customPaywall.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        customPaywall.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -ConstraintValue.bottom).isActive = true
     }
     
     // MARK: - UIResponder

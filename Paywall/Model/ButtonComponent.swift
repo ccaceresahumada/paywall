@@ -18,6 +18,8 @@ class ButtonComponent: Component {
     var backgroundColor: String = ""
     var textColor: String = ""
     var actionCode: String = ""
+    var weight: ComponentWeight = .regular
+    var fontSize: CGFloat = 0
 
     private enum CodingKeys: String, CodingKey {
         case title
@@ -27,6 +29,8 @@ class ButtonComponent: Component {
         case backgroundColor
         case textColor
         case actionCode
+        case fontSize
+        case weight
     }
     
     // MARK: - Initializer
@@ -49,6 +53,8 @@ class ButtonComponent: Component {
         textColor = try container.decode(String.self, forKey: .textColor)
         backgroundColor = try container.decode(String.self, forKey: .backgroundColor)
         actionCode = try container.decode(String.self, forKey: .actionCode)
+        fontSize = try container.decode(CGFloat.self, forKey: .fontSize)
+        weight = try container.decode(ComponentWeight.self, forKey: .weight)
         
         try super.init(from: decoder)
     }
@@ -62,7 +68,9 @@ class ButtonComponent: Component {
         try container.encode(backgroundColor, forKey: .backgroundColor)
         try container.encode(textColor, forKey: .textColor)
         try container.encode(actionCode, forKey: .actionCode)
-        
+        try container.encode(fontSize, forKey: .fontSize)
+        try container.encode(weight, forKey: .weight)
+
         try super.encode(to: encoder)
     }
 }

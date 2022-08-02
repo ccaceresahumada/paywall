@@ -10,45 +10,53 @@
       "type": "image",
       "asset": "http://localhost:8000/images/logo.png",
       "alignment": "center",
-      "widthPercentage": 0.3
+      "widthPercentage": 0.3,
+      "height": 200
     },
     {
       "type": "label",
       "title": "The best stories in all the world, all in one place.",
-      "textColor": "#F8F8FFFF",
+      "textColor": "#FFFFFFFF",
       "weight": "bold",
+      "fontSize": 20,
       "titleAlignment": "center",
       "alignment": "center",
       "widthPercentage": 1,
-      "casing": "none"
+      "casing": "none",
+      "lines": 2
     },
     {
       "type": "image",
       "asset": "http://localhost:8000/images/brands.png",
       "alignment": "center",
-      "widthPercentage": 1
+      "widthPercentage": 1,
+      "height": 40
     },
     {
       "type": "button",
-      "title": "Sign up now",
+      "title": "SIGN UP NOW",
       "titleAlignment": "center",
       "alignment": "center",
       "casing": "upper",
+      "weight": "regular",
       "widthPercentage": 1,
       "height": 50,
-      "backgroundColor": "#1A1D28FF",
-      "textColor": "#F8F8FFFF",
-      "actionCode": "sign_up_now_button_tapped"
+      "fontSize": 30,
+      "backgroundColor": "#006AC7",
+      "textColor": "#FFFFFFFF",
+      "actionCode": "eplus_free_trial"
     },
     {
       "type": "label",
       "title": "Start streaming Disney+ with yout 7 day free trial, then only 6.99/month.",
-      "textColor": "#F8F8FFFF",
+      "textColor": "#FFFFFFFF",
       "weight": "regular",
+      "fontSize": 14,
       "titleAlignment": "center",
       "alignment": "center",
       "widthPercentage": 1,
-      "casing": "none"
+      "casing": "none",
+      "lines": 2
     },
     {
       "type": "separator",
@@ -62,11 +70,13 @@
       "title": "Log In",
       "titleAlignment": "center",
       "alignment": "center",
+      "weight": "regular",
       "casing": "camel",
       "widthPercentage": 0.5,
       "height": 50,
-      "textColor": "#F8F8FFFF",
-      "actionCode": "log_in_button_tapped",
+      "fontSize": 30,
+      "textColor": "#FFFFFFFF",
+      "actionCode": "loginButtonTapped",
       "backgroundColor": "#00FFFFFF"
     }
   ]

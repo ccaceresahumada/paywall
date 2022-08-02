@@ -14,6 +14,12 @@ protocol PaywallViewModelDelegate: AnyObject {
     func paywallFailedToUpdate(_ error: Error?)
 }
 
+enum ActionCode: String {
+    case loginButtonTapped
+    case disneyStartFreeTrialButtonTapped = "dplus_free_trial"
+    case espnSignUpNowButtonTapped = "eplus_free_trial"
+}
+
 class PaywallViewModel {
     
     // MARK: - Private properties
@@ -48,6 +54,11 @@ class PaywallViewModel {
         return UIColor(hex: paywall.metadata.backgroundColor)
     }
     
+    func getComponentWidthPercentage(index: Int) -> CGFloat {
+        guard let data = paywall?.components[index] else { return 0 }
+        return data.widthPercentage
+    }
+    
     func reloadData() {
         Network.shared.fetchPaywall(type) { [weak self] paywall, error in
             guard let paywall = paywall else {
@@ -61,6 +72,103 @@ class PaywallViewModel {
                 self?.delegate?.paywallUpdatedSuccessfully()
             }
         }
+    }
+    
+    // MARK: - Button
+    
+    func getButtonTitle(index: Int) -> String {
+        guard let data = paywall?.components[index] as? ButtonComponent else { return "" }
+        return data.title
+    }
+    
+    func getButtonTextAlignment(index: Int) -> NSTextAlignment {
+        guard let data = paywall?.components[index] as? ButtonComponent else { return .center }
+        switch data.titleAlignment {
+        case .center:
+            return .center
+        }
+    }
+    
+    func getButtonHeight(index: Int) -> CGFloat {
+        guard let data = paywall?.components[index] as? ButtonComponent else { return 0 }
+        return data.height
+    }
+    
+    func getButtonAction(index: Int) -> ActionCode? {
+        guard
+            let data = paywall?.components[index] as? ButtonComponent,
+            let actionCode = ActionCode(rawValue: data.actionCode)
+        else { return nil }
+        return actionCode
+    }
+    
+    func getButtonTextColor(index: Int) -> UIColor? {
+        guard let data = paywall?.components[index] as? ButtonComponent else { return nil }
+        return UIColor(hex: data.textColor)
+    }
+    
+    func getButtonBackgroundColor(index: Int) -> UIColor? {
+        guard let data = paywall?.components[index] as? ButtonComponent else { return nil }
+        return UIColor(hex: data.backgroundColor)
+    }
+    
+    func getButtonTitleFont(index: Int) -> UIFont? {
+        guard let data = paywall?.components[index] as? ButtonComponent else { return nil }
+        return data.weight == .bold ? UIFont.boldSystemFont(ofSize: data.fontSize) : UIFont.systemFont(ofSize: data.fontSize)
+    }
+    
+    // MARK: - Label
+    
+    func getLabelText(index: Int) -> String {
+        guard let data = paywall?.components[index] as? LabelComponent else { return "" }
+        return data.title
+    }
+    
+    func getLabelTextColor(index: Int) -> UIColor? {
+        guard let data = paywall?.components[index] as? LabelComponent else { return nil }
+        return UIColor(hex: data.textColor)
+    }
+    
+    func getLabelTextAlignment(index: Int) -> NSTextAlignment {
+        guard let data = paywall?.components[index] as? LabelComponent else { return .center }
+        switch data.titleAlignment {
+        case .center:
+            return .center
+        }
+    }
+    
+    func getLabelMaxLines(index: Int) -> Int {
+        guard let data = paywall?.components[index] as? LabelComponent else { return 1 }
+        return data.lines
+    }
+    
+    func getLabelFont(index: Int) -> UIFont? {
+        guard let data = paywall?.components[index] as? LabelComponent else { return nil }
+        return data.weight == .bold ? UIFont.boldSystemFont(ofSize: data.fontSize) : UIFont.systemFont(ofSize: data.fontSize)
+    }
+    
+    // MARK: - Image
+    
+    func getImageName(index: Int) -> String {
+        guard let data = paywall?.components[index] as? ImageComponent else { return "" }
+        return parseURLForFileName(url: data.assetURL)
+    }
+    
+    func getImageHeight(index: Int) -> CGFloat {
+        guard let data = paywall?.components[index] as? ImageComponent else { return 0 }
+        return data.height
+    }
+    
+    // MARK: - Separator
+    
+    func getSeparatorColor(index: Int) -> UIColor? {
+        guard let data = paywall?.components[index] as? SeparatorComponent else { return nil }
+        return UIColor(hex: data.color)
+    }
+    
+    func getSeparatorHeight(index: Int) -> CGFloat {
+        guard let data = paywall?.components[index] as? SeparatorComponent else { return 0 }
+        return data.height
     }
     
     // MARK: - Private utils
