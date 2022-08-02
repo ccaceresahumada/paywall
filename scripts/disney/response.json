@@ -60,7 +60,7 @@
       "fontSize": 17,
       "backgroundColor": "#006AC7FF",
       "textColor": "#FFFFFFFF",
-      "actionCode": "eplus_free_trial",
+      "actionCode": "dplus_free_trial",
       "constraints": {
         "leading": 16,
         "trailing": 16,

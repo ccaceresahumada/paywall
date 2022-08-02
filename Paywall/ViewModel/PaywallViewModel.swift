@@ -99,12 +99,9 @@ class PaywallViewModel {
         return data.height
     }
     
-    func getButtonAction(index: Int) -> ActionCode? {
-        guard
-            let data = paywall?.components[index] as? ButtonComponent,
-            let actionCode = ActionCode(rawValue: data.actionCode)
-        else { return nil }
-        return actionCode
+    func getButtonActionCode(index: Int) -> String? {
+        guard let data = paywall?.components[index] as? ButtonComponent else { return nil }
+        return data.actionCode
     }
     
     func getButtonTextColor(index: Int) -> UIColor? {

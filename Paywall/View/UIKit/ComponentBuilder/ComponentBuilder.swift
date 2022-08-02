@@ -9,17 +9,30 @@
 import Foundation
 import UIKit
 
+class CustomButton: UIButton {
+    var actionCode: String?
+    
+    init(actionCode: String?) {
+        self.actionCode = actionCode
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 protocol ComponentBuilderFactory {
-    func makeButtonComponent(withViewModel viewModel: PaywallViewModel, index: Int) -> UIButton
+    func makeButtonComponent(withViewModel viewModel: PaywallViewModel, index: Int) -> CustomButton
     func makeLabelComponent(withViewModel viewModel: PaywallViewModel, index: Int) -> UILabel
     func makeImageComponent(withViewModel viewModel: PaywallViewModel, index: Int) -> UIImageView
     func makeSeparatorComponent(withViewModel viewModel: PaywallViewModel, index: Int) -> UIView
 }
 
-struct ComponentBuilder: ComponentBuilderFactory {
+class ComponentBuilder: ComponentBuilderFactory {
 
-    func makeButtonComponent(withViewModel viewModel: PaywallViewModel, index: Int) -> UIButton {
-        let button = UIButton()
+    func makeButtonComponent(withViewModel viewModel: PaywallViewModel, index: Int) -> CustomButton {
+        let button = CustomButton(actionCode: viewModel.getButtonActionCode(index: index))
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(viewModel.getButtonTitle(index: index), for: .normal)
         button.setTitleColor(viewModel.getButtonTextColor(index: index), for: .normal)

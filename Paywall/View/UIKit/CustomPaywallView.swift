@@ -54,7 +54,9 @@ class CustomPaywallView: UIView {
                 elements.append(ComponentBuilder().makeSeparatorComponent(withViewModel: viewModel, index: index))
                 elementsConstraints.append(constraints)
             case .button:
-                elements.append(ComponentBuilder().makeButtonComponent(withViewModel: viewModel, index: index))
+                let button = ComponentBuilder().makeButtonComponent(withViewModel: viewModel, index: index)
+                button.addTarget(self, action: #selector(didTapOnButtonWithActionCode(sender:)), for: .touchUpInside)
+                elements.append(button)
                 elementsConstraints.append(constraints)
             }
         }
@@ -97,5 +99,21 @@ class CustomPaywallView: UIView {
         }
         
         previousElement = element
+    }
+    
+    @objc func didTapOnButtonWithActionCode(sender: Any) {
+        if
+            let button = sender as? CustomButton,
+            let code = button.actionCode,
+            let action = ActionCode(rawValue: code) {
+            switch action {
+            case .loginButtonTapped:
+                print("Log In")
+            case .disneyStartFreeTrialButtonTapped:
+                print("Purchase \(action.rawValue)")
+            case .espnSignUpNowButtonTapped:
+                print("Purchase \(action.rawValue)")
+            }
+        }
     }
 }
