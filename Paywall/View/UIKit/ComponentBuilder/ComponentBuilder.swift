@@ -21,8 +21,8 @@ struct ComponentBuilder: ComponentBuilderFactory {
     func makeButtonComponent(withViewModel viewModel: PaywallViewModel, index: Int) -> UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.text = viewModel.getButtonTitle(index: index)
-        button.titleLabel?.textColor = viewModel.getButtonTextColor(index: index)
+        button.setTitle(viewModel.getButtonTitle(index: index), for: .normal)
+        button.setTitleColor(viewModel.getButtonTextColor(index: index), for: .normal)
         button.titleLabel?.textAlignment = viewModel.getButtonTextAlignment(index: index)
         button.titleLabel?.font = viewModel.getButtonTitleFont(index: index)
         button.backgroundColor = viewModel.getButtonBackgroundColor(index: index)

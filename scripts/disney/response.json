@@ -18,7 +18,7 @@
       "title": "The best stories in all the world, all in one place.",
       "textColor": "#FFFFFFFF",
       "weight": "bold",
-      "fontSize": 20,
+      "fontSize": 18,
       "titleAlignment": "center",
       "alignment": "center",
       "widthPercentage": 1,
@@ -38,18 +38,18 @@
       "titleAlignment": "center",
       "alignment": "center",
       "casing": "upper",
-      "weight": "regular",
+      "weight": "bold",
       "widthPercentage": 1,
-      "height": 50,
-      "fontSize": 30,
-      "backgroundColor": "#006AC7",
+      "height": 55,
+      "fontSize": 17,
+      "backgroundColor": "#00006AC7",
       "textColor": "#FFFFFFFF",
       "actionCode": "eplus_free_trial"
     },
     {
       "type": "label",
       "title": "Start streaming Disney+ with yout 7 day free trial, then only 6.99/month.",
-      "textColor": "#FFFFFFFF",
+      "textColor": "#00919396",
       "weight": "regular",
       "fontSize": 14,
       "titleAlignment": "center",
@@ -74,10 +74,10 @@
       "casing": "camel",
       "widthPercentage": 0.5,
       "height": 50,
-      "fontSize": 30,
+      "fontSize": 20,
       "textColor": "#FFFFFFFF",
       "actionCode": "loginButtonTapped",
-      "backgroundColor": "#00FFFFFF"
+      "backgroundColor": "#1A1D28FF"
     }
   ]
 }
