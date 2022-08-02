@@ -64,15 +64,49 @@ enum UIElementFamily: String, ComponentFamily {
     }
 }
 
+class ComponentConstraint: Codable {
+    var leading: CGFloat = 0
+    var trailing: CGFloat = 0
+    var top: CGFloat = 0
+    var bottom: CGFloat = 0
+    
+    private enum CodingKeys: String, CodingKey {
+        case leading
+        case trailing
+        case top
+        case bottom
+    }
+    
+    init() {}
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        leading = try container.decode(CGFloat.self, forKey: .leading)
+        trailing = try container.decode(CGFloat.self, forKey: .trailing)
+        top = try container.decode(CGFloat.self, forKey: .top)
+        bottom = try container.decode(CGFloat.self, forKey: .bottom)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(leading, forKey: .leading)
+        try container.encode(trailing, forKey: .trailing)
+        try container.encode(top, forKey: .top)
+        try container.encode(bottom, forKey: .bottom)
+    }
+}
+
 class Component: Codable {
     var type: ComponentType = .label
     var alignment: ComponentAlignment = .center
     var widthPercentage: CGFloat = 1
+    var constraints: ComponentConstraint = ComponentConstraint()
     
     private enum CodingKeys: String, CodingKey {
         case type
         case alignment
         case widthPercentage
+        case constraints
     }
     
     // MARK: - Initializers
@@ -84,6 +118,7 @@ class Component: Codable {
         type = try container.decode(ComponentType.self, forKey: .type)
         alignment = try container.decode(ComponentAlignment.self, forKey: .alignment)
         widthPercentage = try container.decode(CGFloat.self, forKey: .widthPercentage)
+        constraints = try container.decode(ComponentConstraint.self, forKey: .constraints)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -91,5 +126,6 @@ class Component: Codable {
         try container.encode(type, forKey: .type)
         try container.encode(alignment, forKey: .alignment)
         try container.encode(widthPercentage, forKey: .widthPercentage)
+        try container.encode(constraints, forKey: .constraints)
     }
 }
