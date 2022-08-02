@@ -26,6 +26,7 @@ class CustomPaywallView: UIView {
     /// - note: An enhancement is to be agnostic of the element order and use another mechanism to decide the order in which views are rendered.
     private var uiElements: [UIView] = [] {
         didSet {
+            clearSubviews()
             layoutUIElements()
         }
     }
@@ -60,6 +61,11 @@ class CustomPaywallView: UIView {
         
         uiElementsConstraints = elementsConstraints
         uiElements = elements
+    }
+    
+    private func clearSubviews() {
+        subviews.forEach { $0.removeFromSuperview() }
+        previousElement = nil
     }
     
     private func layoutUIElements() {

@@ -41,7 +41,12 @@ class PaywallViewController: UIViewController, PaywallViewModelDelegate {
     
     // MARK: - Layout
     
+    private func clearSubviews() {
+        view.subviews.forEach { $0.removeFromSuperview() }
+    }
+    
     private func layout() {
+        clearSubviews()
         layoutBackgroundImage()
         layoutCustomPaywallView()
     }
@@ -51,11 +56,7 @@ class PaywallViewController: UIViewController, PaywallViewModelDelegate {
         backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: -20).isActive = true
         backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        if viewModel?.getCurrentType() == .espn {
-            backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        } else {
-            backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: (-0.35) * UIScreen.main.bounds.height).isActive = true
-        }
+        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: (-0.35) * UIScreen.main.bounds.height).isActive = true
     }
     
     private func layoutCustomPaywallView() {
@@ -80,6 +81,7 @@ class PaywallViewController: UIViewController, PaywallViewModelDelegate {
         view.backgroundColor = viewModel.getBackgroundColor()
         backgroundImageView.image = UIImage(named: viewModel.getBackgroundImageName())
         customPaywall.viewModel = viewModel
+        layout()
     }
     
     func paywallFailedToUpdate(_ error: Error?) {

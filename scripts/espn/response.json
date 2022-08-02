@@ -1,7 +1,7 @@
 {
   "meta": {
     "backgroundImage": "http://localhost:8000/images/espn.jpg",
-    "backgroundColor": "#1A1D28FF",
+    "backgroundColor": "#00000000",
     "fontFamily": "SF Pro",
     "identifier": "espn"
   },
@@ -11,36 +11,52 @@
       "title": "Serving Fans. Anytime. Anywhere.",
       "textColor": "#F8F8FFFF",
       "weight": "bold",
-      "fontSize": 30,
+      "fontSize": 20,
       "alignment": "center",
       "titleAlignment": "center",
       "widthPercentage": 1,
       "casing": "none",
-      "lines": 1
+      "lines": 1,
+      "constraints": {
+        "centerX": 0,
+        "bottom": 20
+      }
     },
     {
       "type": "label",
       "title": "All the Sports. All the Time. Thousands of events, exclusive original series, and more -- all in HD.",
       "textColor": "#F8F8FFFF",
       "weight": "regular",
-      "fontSize": 20,
+      "fontSize": 18,
       "alignment": "center",
       "titleAlignment": "center",
       "widthPercentage": 1,
       "casing": "none",
-      "lines": 3
+      "lines": 3,
+      "constraints": {
+        "leading": 20,
+        "trailing": 20,
+        "top": 20,
+        "bottom": 80
+      }
     },
     {
       "type": "label",
       "title": "Already Hve an ESPN+ Accout?.",
       "textColor": "#F8F8FFFF",
       "weight": "regular",
-      "fontSize": 20,
+      "fontSize": 18,
       "alignment": "center",
       "titleAlignment": "center",
       "widthPercentage": 1,
       "casing": "none",
-      "lines": 1
+      "lines": 1,
+      "constraints": {
+        "leading": 16,
+        "trailing": 16,
+        "top": 80,
+        "bottom": 10
+      }
     },
     {
       "type": "button",
@@ -49,12 +65,18 @@
       "alignment": "center",
       "casing": "camel",
       "widthPercentage": 1,
-      "height": 50,
+      "height": 60,
       "weight": "bold",
-      "fontSize": 20,
-      "backgroundColor": "#FFF2A72D",
+      "fontSize": 18,
+      "backgroundColor": "#F2A72DFF",
       "textColor": "#F8F8FFFF",
-      "actionCode": "loginButtonTapped"
+      "actionCode": "loginButtonTapped",
+      "constraints": {
+        "leading": 16,
+        "trailing": 16,
+        "top": 10,
+        "bottom": 25
+      }
     },
     {
       "type": "button",
@@ -63,24 +85,36 @@
       "alignment": "center",
       "casing": "camel",
       "widthPercentage": 1,
-      "height": 50,
+      "height": 60,
       "weight": "bold",
-      "fontSize": 20,
-      "backgroundColor": "#FFF2A72D",
+      "fontSize": 18,
+      "backgroundColor": "#F2A72DFF",
       "textColor": "#F8F8FFFF",
-      "actionCode": "dplus_free_trial"
+      "actionCode": "dplus_free_trial",
+      "constraints": {
+        "leading": 16,
+        "trailing": 16,
+        "top": 25,
+        "bottom": 10
+      }
     },
     {
       "type": "label",
       "title": "7-day free trial, then $5.99/month",
       "textColor": "#F8F8FFFF",
       "weight": "regular",
-      "fontSize": 20,
+      "fontSize": 18,
       "alignment": "center",
       "titleAlignment": "center",
       "widthPercentage": 1,
       "casing": "none",
-      "lines": 1
+      "lines": 1,
+      "constraints": {
+        "leading": 16,
+        "trailing": 16,
+        "top": 10,
+        "bottom": 60
+      }
     }
   ]
 }
