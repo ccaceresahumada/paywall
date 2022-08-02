@@ -48,11 +48,13 @@ class PaywallViewController: UIViewController, PaywallViewModelDelegate {
     
     private func layoutBackgroundImage() {
         view.addSubview(backgroundImageView)
-        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: -20).isActive = true
         backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         if viewModel?.getCurrentType() == .espn {
             backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        } else {
+            backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: (-0.35) * UIScreen.main.bounds.height).isActive = true
         }
     }
     

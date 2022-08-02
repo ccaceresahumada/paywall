@@ -14,7 +14,7 @@
       "height": 150,
       "constraints": {
         "centerX": 0,
-        "bottom": 10
+        "bottom": -20
       }
     },
     {
@@ -31,7 +31,7 @@
       "constraints": {
         "leading": 16,
         "trailing": 16,
-        "top": 10,
+        "top": -20,
         "bottom": 10
       }
     },
