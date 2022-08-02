@@ -14,10 +14,10 @@ Check out the [prompt](PROMPT.md) to get started.
 
 ## Edge cases
 
-The flow of the app is severely limited by the need to restart the server.
-If the server is not running, the app shows an empty screen.
-If the response json is ill formatted the app shows an empty screen.
-If the response json is empty, the app crashes when trying to decode the data. See the Enhacements section at the bottom
+- The flow of the app is severely limited by the need to restart the server.
+- If the server is not running, the app shows an empty screen.
+- If the response json is ill formatted the app shows an empty screen.
+- If the response json is empty or something is missing, the app crashes when trying to decode the data. See the Enhacements section at the bottom
 
 ## Architecture
 
