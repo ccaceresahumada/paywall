@@ -22,11 +22,43 @@ The following are some sample questions for you to get started on your README, b
 
 ## Architecture
 
+I used an MVVM arquitecture with the following components:
+
+### PaywallViewModel
+
+The view model has two functions:
+
+1. Fetch data from the service and inform its delegate of the update result
+2. Obtain specific data on the paywall to be consumed by the views
+
+### PaywallViewController
+
+The main view controller of the application contains two main components:
+
+1. The imageview for the background image
+2. A custom paywall view that contains the components listed in the json response
+
+### Model
+
+Based on the [json format](https://github.com/ccaceresahumada/paywall/blob/main/scripts/disney/response.json) I created several classes conforming to `Codable` to read the data into the application as a `PaywallLayout` object.
+
+I created the Generic `Component` class to be the base class of all other UI Elements in the json file: labels, buttons and images. This way each specific component only has to deal with its own properties.
+
+## Network
+
+The PaywallService class contains a single method `fetchData` that is in charge of hiting the given endpoint to retrieve paywall information. This method managed several possible failure scenarios by printing to the console what went wrong. In real life I would hook telemetry here so we can gain information into how services are performing and how client manages failure scenarios. This is where I would also manage retry strategies for recoverable errors like server being down.
+
 ## Dependency Injection
+
+I added a PaywallServiceInjector protocol that allows its implementors to access a single instance of the PaywallSevice class. This decoupling allows for easier unit testing and maintanability.
 
 ## UI
 
+I am not familiar with SwiftUI, so I used UIKit and programmatic constraints to render the UI. Because of this I decided to add a constraints object to the json response that contains the values for leading, trailing, top and bottom constraints on each element.
+
 ## Unit Tests
+
+I added a simple set of unit tests for verifying that the view model is working as expected. I decided not to create a test for each method in the view model because they pretty much follow the same pattern. However, I implemented a simple strategy to load test data (so we don't need to run the server) and to mock the paywall service so unit tests can run.
 
 ## Enhancements
 
@@ -47,9 +79,9 @@ Because we are serving the images on a local server, reloading data is relativel
 
 ### More testing
 
-I added a simple set of unit tests for verifying that the view model is working as expected. I decided not to create a test for each method in the view model because they pretty much follow the same pattern.
+Complete unit tests for the view model using the existing pattern.
 
-I did not add an UI Tests, but it would be interesting to update the code to support accessibilityIdentifier and use them to verify the UI hierarchy.
+I did not add an UI Tests, but it would be interesting to update the code to support accessibilityIdentifier and use them to verify the UI hierarchy against the json response.
 
 ### Localization support
 
