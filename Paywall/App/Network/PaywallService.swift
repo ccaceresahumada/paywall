@@ -21,19 +21,26 @@ enum NetworkError: Error {
 
 typealias PaywallResponse = (PaywallLayout?, Error?) -> Void
 
-class Network {
+final class PaywallService {
     
-    // MARK: - Singleton instance
+    // MARK: - Private properties
     
-    static let shared: Network = Network()
+    private var testData: PaywallLayout?
     
-    // MARK: - Private initializer
+    // MARK: - Initializer
     
-    private init() {}
+    init(testData: PaywallLayout? = nil) {
+        self.testData = testData
+    }
     
     // MARK: - Public API
     
     func fetchPaywall(_ type: PaywallType = .disney, completionHandler: @escaping PaywallResponse) {
+        guard testData == nil else {
+            completionHandler(testData, nil)
+            return
+        }
+
         guard let url = URL(string: "http://localhost:8000/response.json") else {
             completionHandler(nil, NetworkError.invalidURL)
             return

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		307430712719D4AA001FA496 /* UIColorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307430702719D4AA001FA496 /* UIColorHelpers.swift */; };
-		379DBE4C28985857003B2874 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE4B28985857003B2874 /* Network.swift */; };
+		379DBE4C28985857003B2874 /* PaywallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE4B28985857003B2874 /* PaywallService.swift */; };
 		379DBE4F28985A30003B2874 /* PaywallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE4E28985A30003B2874 /* PaywallLayout.swift */; };
 		379DBE5128985A80003B2874 /* ImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE5028985A80003B2874 /* ImageComponent.swift */; };
 		379DBE5328985BB5003B2874 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE5228985BB5003B2874 /* Metadata.swift */; };
@@ -19,13 +19,14 @@
 		379DBE5F28989302003B2874 /* PaywallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE5E28989302003B2874 /* PaywallViewModel.swift */; };
 		379DBE6128989E00003B2874 /* CustomPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE6028989E00003B2874 /* CustomPaywallView.swift */; };
 		379DBE642898A35D003B2874 /* ComponentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE632898A35D003B2874 /* ComponentBuilder.swift */; };
+		379DBE6C28997FB9003B2874 /* PaywallServiceInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379DBE6B28997FB9003B2874 /* PaywallServiceInjector.swift */; };
 		C3E0C60B25239C310034987E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C60A25239C310034987E /* AppDelegate.swift */; };
 		C3E0C60D25239C310034987E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C60C25239C310034987E /* SceneDelegate.swift */; };
 		C3E0C60F25239C310034987E /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C60E25239C310034987E /* PaywallView.swift */; };
 		C3E0C61125239C330034987E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3E0C61025239C330034987E /* Assets.xcassets */; };
 		C3E0C61425239C330034987E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3E0C61325239C330034987E /* Preview Assets.xcassets */; };
 		C3E0C61725239C330034987E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3E0C61525239C330034987E /* LaunchScreen.storyboard */; };
-		C3E0C62225239C330034987E /* PaywallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C62125239C330034987E /* PaywallTests.swift */; };
+		C3E0C62225239C330034987E /* PaywallViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C62125239C330034987E /* PaywallViewModelTests.swift */; };
 		C3E0C63025239D4B0034987E /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C62F25239D4B0034987E /* PaywallViewController.swift */; };
 		C3E0C63225239F7A0034987E /* SwiftUIShakeHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0C63125239F7A0034987E /* SwiftUIShakeHandling.swift */; };
 		C3E0C6342523A0B20034987E /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = C3E0C6332523A0B20034987E /* scripts */; };
@@ -46,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		307430702719D4AA001FA496 /* UIColorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHelpers.swift; sourceTree = "<group>"; };
-		379DBE4B28985857003B2874 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		379DBE4B28985857003B2874 /* PaywallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallService.swift; sourceTree = "<group>"; };
 		379DBE4E28985A30003B2874 /* PaywallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallLayout.swift; sourceTree = "<group>"; };
 		379DBE5028985A80003B2874 /* ImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComponent.swift; sourceTree = "<group>"; };
 		379DBE5228985BB5003B2874 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		379DBE5E28989302003B2874 /* PaywallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewModel.swift; sourceTree = "<group>"; };
 		379DBE6028989E00003B2874 /* CustomPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPaywallView.swift; sourceTree = "<group>"; };
 		379DBE632898A35D003B2874 /* ComponentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentBuilder.swift; sourceTree = "<group>"; };
+		379DBE6B28997FB9003B2874 /* PaywallServiceInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallServiceInjector.swift; sourceTree = "<group>"; };
 		C3E0C60725239C310034987E /* Paywall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paywall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E0C60A25239C310034987E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3E0C60C25239C310034987E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		C3E0C61625239C330034987E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3E0C61825239C330034987E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3E0C61D25239C330034987E /* PaywallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaywallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3E0C62125239C330034987E /* PaywallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallTests.swift; sourceTree = "<group>"; };
+		C3E0C62125239C330034987E /* PaywallViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewModelTests.swift; sourceTree = "<group>"; };
 		C3E0C62325239C330034987E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3E0C62F25239D4B0034987E /* PaywallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewController.swift; sourceTree = "<group>"; };
 		C3E0C63125239F7A0034987E /* SwiftUIShakeHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIShakeHandling.swift; sourceTree = "<group>"; };
@@ -98,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				C3E0C6392523A1A00034987E /* NetworkingHelpers.swift */,
-				379DBE4B28985857003B2874 /* Network.swift */,
+				379DBE4B28985857003B2874 /* PaywallService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -139,6 +141,14 @@
 				379DBE632898A35D003B2874 /* ComponentBuilder.swift */,
 			);
 			path = ComponentBuilder;
+			sourceTree = "<group>";
+		};
+		379DBE6A28997F93003B2874 /* Injector */ = {
+			isa = PBXGroup;
+			children = (
+				379DBE6B28997FB9003B2874 /* PaywallServiceInjector.swift */,
+			);
+			path = Injector;
 			sourceTree = "<group>";
 		};
 		C3E0C5FE25239C310034987E = {
@@ -185,7 +195,7 @@
 		C3E0C62025239C330034987E /* PaywallTests */ = {
 			isa = PBXGroup;
 			children = (
-				C3E0C62125239C330034987E /* PaywallTests.swift */,
+				C3E0C62125239C330034987E /* PaywallViewModelTests.swift */,
 				C3E0C62325239C330034987E /* Info.plist */,
 			);
 			path = PaywallTests;
@@ -214,6 +224,7 @@
 		C3E0C62E25239D370034987E /* App */ = {
 			isa = PBXGroup;
 			children = (
+				379DBE6A28997F93003B2874 /* Injector */,
 				379DBE4A28985817003B2874 /* Network */,
 				C3E0C61025239C330034987E /* Assets.xcassets */,
 				C3E0C61525239C330034987E /* LaunchScreen.storyboard */,
@@ -334,11 +345,12 @@
 				379DBE6128989E00003B2874 /* CustomPaywallView.swift in Sources */,
 				379DBE552898777F003B2874 /* Component.swift in Sources */,
 				C3E0C63225239F7A0034987E /* SwiftUIShakeHandling.swift in Sources */,
-				379DBE4C28985857003B2874 /* Network.swift in Sources */,
+				379DBE4C28985857003B2874 /* PaywallService.swift in Sources */,
 				C3E0C60D25239C310034987E /* SceneDelegate.swift in Sources */,
 				C3E0C60F25239C310034987E /* PaywallView.swift in Sources */,
 				379DBE5F28989302003B2874 /* PaywallViewModel.swift in Sources */,
 				379DBE5128985A80003B2874 /* ImageComponent.swift in Sources */,
+				379DBE6C28997FB9003B2874 /* PaywallServiceInjector.swift in Sources */,
 				379DBE5928987C10003B2874 /* LabelComponent.swift in Sources */,
 				379DBE5B28987D41003B2874 /* SeparatorComponent.swift in Sources */,
 				307430712719D4AA001FA496 /* UIColorHelpers.swift in Sources */,
@@ -354,7 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3E0C62225239C330034987E /* PaywallTests.swift in Sources */,
+				C3E0C62225239C330034987E /* PaywallViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

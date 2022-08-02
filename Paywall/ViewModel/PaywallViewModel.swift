@@ -20,7 +20,7 @@ enum ActionCode: String {
     case espnSignUpNowButtonTapped = "eplus_free_trial"
 }
 
-class PaywallViewModel {
+class PaywallViewModel: PaywallServiceInjector {
     
     // MARK: - Private properties
     
@@ -59,15 +59,16 @@ class PaywallViewModel {
         return data.widthPercentage
     }
     
-    func reloadData() {
-        Network.shared.fetchPaywall(type) { [weak self] paywall, error in
+    /// Inject the queue from Unit Tests **ONLY**.
+    func reloadData(queue: DispatchQueue = DispatchQueue.main) {
+        paywallService.fetchPaywall(type) { [weak self] paywall, error in
             guard let paywall = paywall else {
-                DispatchQueue.main.sync {
+                queue.async {
                     self?.delegate?.paywallFailedToUpdate(error)
                 }
                 return
             }
-            DispatchQueue.main.sync {
+            queue.async {
                 self?.paywall = paywall
                 self?.delegate?.paywallUpdatedSuccessfully()
             }
